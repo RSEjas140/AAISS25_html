@@ -68,7 +68,7 @@ contact: 'jas140@aber.ac.uk' # FIXME
 episodes: 
 - 00-worked-example.Rmd
 - 01-problem-definition.md
-
+- 04-model-selection.Rmd
 # Information for Learners
 learners: 
 
