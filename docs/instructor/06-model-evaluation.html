@@ -262,6 +262,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#error-metrics">Error Metrics</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -326,7 +327,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Model Evaluation</h1>
-        <p>Last updated on 2025-07-08 |
+        <p>Last updated on 2025-07-09 |
 
         <a href="https://github.com/RSEjas140/AAISS25_html/edit/main/episodes/06-model-evaluation.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -370,34 +371,87 @@ machine learning models</strong>, and used them to make
 <strong>predictions</strong>. Now we turn to an equally important
 question:</p>
 <blockquote>
-<p><strong>how do we know if our models are actually any
-good?</strong></p>
+<p><strong>How do we know if our models are actually any good
+?</strong></p>
 </blockquote>
+<p><br></p>
 <p>It might be tempting to think that once we’ve trained a model and it
 predicts well on the data we gave it, our job is done. But without
 proper evaluation, we risk building models that <strong>aren’t
 performing in a way we expect</strong>.</p>
+<p><br></p>
 <div class="section level3">
-<h3 id="supporting-better-decisions">Supporting better decisions<a class="anchor" aria-label="anchor" href="#supporting-better-decisions"></a></h3>
-<p>Rigorous evaluation allows us to:</p>
-<ul><li>Compare different models or algorithms side by side.</li>
-<li>Select the model that best meets our goals, based on evidence — not
-guesswork.</li>
-</ul></div>
+<h3 id="case-study-ai-camera-operator">Case Study: ⚽ AI Camera Operator<a class="anchor" aria-label="anchor" href="#case-study-ai-camera-operator"></a></h3>
+<p>Imagine you’re managing a lower tier football club. You want to make
+more of your games accessible to your fans, especially those who can’t
+attend in person. To achieve this, you hire a company that installs an
+<strong>AI-powered camera operator</strong> at your stadium.</p>
+<p>They promise impressive results, boasting extremely high accuracy at
+<strong>tracking the ball</strong> throughout the game. Impressed by
+this cutting-edge technology, you announce to your fans that they can
+now enjoy live coverage online, following the ball, every exciting
+moment, from the comfort of their homes.</p>
+<p>On game day, fans tune in. But instead of watching the ball move up
+and down the pitch, they’re treated to something else entirely…</p>
+<blockquote>
+<p><strong>Watch:</strong><br><a href="https://youtu.be/WaQpIKUXluA" class="external-link"><img src="../fig/ai_camera_thumbnail.png" alt="AI Camera Ruins Football Game" class="figure"></a></p>
+</blockquote>
+<p>Source: <a href="https://www.ndtv.com/offbeat/ai-camera-ruins-football-game-by-mistaking-referees-bald-head-for-ball-2319171" class="external-link">ND-TV</a></p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  ❓ What actually happened?
+  </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div class="accordion-body">
+<p>The camera’s AI had been trained to detect the ball, but during the
+match it repeatedly mistook the <strong>bald head of the
+linesman</strong> for the ball. This resulted in the camera constantly
+panning away from the action. Fans were frustrated, and the club faced a
+fair amount of embarrassment</p>
+<p>This is a classic real-world reminder that:</p>
+<ul><li>Even a model with “high accuracy” might fail in practice if it
+wasn’t evaluated in realistic conditions.</li>
+<li>Metrics alone don’t guarantee the model works as intended for the
+end user.</li>
+</ul><p>Proper evaluation, with representative data and thoughtful metrics,
+is critical to avoid costly or embarrassing mistakes like this.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+</div>
 <div class="section level3">
-<h3 id="detecting-bias-and-unintended-behaviour">Detecting bias and unintended behaviour<a class="anchor" aria-label="anchor" href="#detecting-bias-and-unintended-behaviour"></a></h3>
-<p>Good evaluation also helps us spot problems we might otherwise miss.
-For example:</p>
-<ul><li>Does the model perform worse on certain groups or classes?</li>
-<li>Are certain types of errors more common than others?</li>
-</ul><p>This insight is critical for building models that are not only
-accurate, but also fair and robust.</p>
-<!--
+<h3 id="supporting-better-decisions-and-uncovering-hidden-problems">Supporting better decisions and uncovering hidden problems<a class="anchor" aria-label="anchor" href="#supporting-better-decisions-and-uncovering-hidden-problems"></a></h3>
+<p>A thoughtful evaluation process does more than just tell us how well
+a model predicts, it provides crucial evidence that helps us make
+informed, data-driven decisions.</p>
+<ul><li>It allows us to <strong>compare different models or algorithms side
+by side</strong>, showing which one truly performs best on our data and
+according to our chosen metrics.</li>
+<li>It helps us select the model that best meets our goals, based on
+objective evidence rather than intuition or hopeful guesswork.</li>
+</ul><p>Evaluation also acts as a safeguard, revealing issues we might
+otherwise overlook:</p>
+<ul><li>It can show whether the model performs <strong>consistently across
+different groups or categories</strong>, or if it struggles
+disproportionately with certain cases.</li>
+<li>It highlights if particular types of errors happen more frequently,
+guiding us to address imbalances or risks.</li>
+</ul><p>By systematically evaluating our models, we ensure they are not only
+accurate, but also <strong>fair, robust, and fit for their intended
+purpose</strong>. This process reduces the chances of deploying a model
+that does not work the way we intended.</p>
+</div>
+</section><section><h2 class="section-heading" id="error-metrics">Error Metrics<a class="anchor" aria-label="anchor" href="#error-metrics"></a></h2>
+<hr class="half-width"><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-</div>
-</section></div> <!-- / div.lesson-content -->
+ --></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/05-training.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -455,7 +509,7 @@ any links that you are not going to use.
   "url": "https://RSEjas140.github.io/AAISS25_html/instructor/06-model-evaluation.html",
   "identifier": "https://RSEjas140.github.io/AAISS25_html/instructor/06-model-evaluation.html",
   "dateCreated": "2025-07-04",
-  "dateModified": "2025-07-08",
+  "dateModified": "2025-07-09",
   "datePublished": "2025-07-09"
 }
 

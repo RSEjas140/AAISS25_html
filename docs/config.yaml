@@ -69,7 +69,7 @@ episodes:
 - 00-worked-example.Rmd
 - 01-problem-definition.md
 - 02-data-exploration-and-preprocessing.Rmd
-- 04-model-selection.Rmd
+- 04-model-selection 2.Rmd
 - 05-training.Rmd
 #- 06-model-evaluation.Rmd
 # Information for Learners
