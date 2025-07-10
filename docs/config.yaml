@@ -71,7 +71,7 @@ episodes:
 - 02-data-exploration-and-preprocessing.Rmd
 - 04-model-selection 2.Rmd
 - 05-training.Rmd
-#- 06-model-evaluation.Rmd
+- 06-model-evaluation.Rmd
 # Information for Learners
 learners: 
 
